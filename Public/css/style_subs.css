@@ -1,0 +1,134 @@
+.index_content{
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+div.img_header{
+	position: relative;
+	height: 320px;
+}
+.img_header .baner1{
+	width: 100%;
+	height: 15px;
+	background-color: #363d42;
+}
+.div_nav{
+	height: 44px;
+	background: #fff;
+}
+ul.ul1{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 45px;
+}
+span.color_general1{
+	background: linear-gradient(to right, #647ca0 , white);
+	width: 118px;
+	height: 45px;
+	display: inline-block;
+}
+span.color_general2{
+	background: linear-gradient(to right, white , #647ca0);
+	width: 108px;
+	height: 45px;
+	display: inline-block;
+}
+ul.ul1>li{
+	float: left;
+	height: 35px;
+	margin-left: 31px;
+	margin-top: 9px;
+}
+ul.ul1>li:first-child{
+	margin-left: 0;
+}
+ul.ul1>li>div>a{
+	padding: 9px 17px 9px 17px;
+}
+ul.ul1 li a span{
+	padding: 0 0 0 7px;
+	font-size: 14px;
+	cursor: pointer;
+}
+ul.ul1 li.active{
+	border-bottom: 5px solid rgba(2,41,100,0.61);
+}
+img.img_baner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+}
+img.img_baner1{
+	position: absolute;
+	left: 130px;
+	top: 90px;
+	z-index: -9;
+}
+img.img_baner2{
+	position: absolute;
+	width: 112px;
+	height: auto;
+	top: 78px;
+	left: 194px;
+	z-index: -8;
+}
+.img_header .title_baner{
+	position: absolute;
+	right: 117px;
+	top: 96px;
+	color: #fff;
+}
+div.nav2{
+	position: absolute;
+	bottom: 0;
+	left: 130px;
+	height: 51px;
+}
+ul.ul2{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 50px;
+}
+div.index_footer{
+	position: relative;
+	background-image: url(../images/small_img/2_0000_bg_layer.png);
+	background-repeat:no-repeat;
+	height: 148px;
+}
+div.nav_footer{
+	margin-left: 130px;
+	background-color: rgba(187,212,236,0.33);
+	height: 82px;
+	display: inline-block;
+}
+ul.ul3{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 50px;
+}
+ul.ul3 li{
+	float: left;
+	height: 50px;
+	width: 97px;
+	margin-left: 35px;
+	margin-top: 24px;
+}
+ul.ul3 li a{
+}
+ul.ul3 li span{
+	color:#fff;
+	margin-left: 10px;
+}
+p.p_tel{
+	color: #fff;
+	position: absolute;
+	bottom: 4px;
+	left: 46%;
+	font-size: 12px;}

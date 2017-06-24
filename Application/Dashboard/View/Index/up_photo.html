@@ -1,0 +1,112 @@
+<style>
+	section {
+		width: 81%;
+		margin: auto;
+		text-align: left;
+	}
+	.form-group{
+		width: 81%;
+		margin: auto;
+		text-align: left;
+		padding-bottom: 10px;
+	}
+	.form-control{
+		display: inline-block;
+		width: auto;
+	}
+</style>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+
+		<ul class="breadcrumb">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a href="#">首页</a>
+			</li>
+			<li class="active">Gallery</li>
+		</ul><!-- .breadcrumb -->
+
+		<div class="nav-search" id="nav-search">
+			<form class="form-search">
+				<span class="input-icon">
+					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+					<i class="icon-search nav-search-icon"></i>
+				</span>
+			</form>
+		</div><!-- #nav-search -->
+	</div>
+
+	<div class="page-content">
+		<div class="page-header">
+			<h1>
+				Gallery
+				<small>
+					<i class="icon-double-angle-right"></i>
+					添加你的图片
+				</small>
+				<a class="btn btn-success btn-sm" href="{:u('Dashboard/Index/photo')}?sub=校园风光">图片查看</a>
+				<select class="form-control field">
+					<option value="校园风光">校园风光</option>
+					<option value="最新作品">最新作品</option>
+					<option value="最佳作品">最佳作品</option>
+				</select>
+			</h1>
+		</div><!-- /.page-header -->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<div class="alert alert-info">
+					<i class="icon-hand-right"></i>
+
+					Please note that demo server is not configured to save uploaded files, therefore you may get an error message.
+					<button class="close" data-dismiss="alert">
+						<i class="icon-remove"></i>
+					</button>
+				</div>
+
+				<div id="dropzone">
+					<form action="{:U('Dashboard/Index/up_photo')}" class="dropzone">
+						<div class="fallback">
+							<input name="file" type="file" multiple="" />
+						</div>
+					</form>
+				</div><!-- PAGE CONTENT ENDS -->
+
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+<script src="__PUBLIC__/assets/js/jquery.cookie.js"></script>
+<script src="__PUBLIC__/assets/js/dropzone.min.js"></script>
+<script type="text/javascript">
+	$(".field").change(function(){
+		$.cookie('g_type', $(".field").val());
+		alert($.cookie('g_type'));
+	});
+	jQuery(function($){
+		$.cookie('g_type', $(".field").val());
+		try {
+			$(".dropzone").dropzone({
+			    paramName: "file", // The name that will be used to transfer the file
+			    maxFilesize: 2, // MB
+			    addRemoveLinks : true,
+			    dictDefaultMessage :
+			    '<span class="bigger-150 bolder"><i class="icon-caret-right red"></i> Drop files</span> to upload \
+			    <span class="smaller-80 grey">(or click)</span> <br /> \
+			    <i class="upload-icon icon-cloud-upload blue icon-3x"></i>'
+			    ,
+			    dictResponseError: 'Error while uploading file!',
+			    
+				//change the previewTemplate to use Bootstrap progress bars
+				previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+			});
+		} catch(e) {
+			alert('Dropzone.js does not support older browsers!');
+		}
+
+	});
+</script>

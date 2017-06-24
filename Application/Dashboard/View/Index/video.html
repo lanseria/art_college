@@ -1,0 +1,191 @@
+		<link href="__PUBLIC__/assets/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+		<div class="main-content">
+			<div class="breadcrumbs" id="breadcrumbs">
+				<script type="text/javascript">
+					try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+				</script>
+
+				<ul class="breadcrumb">
+					<li>
+						<i class="icon-home home-icon"></i>
+						<a href="#">首页</a>
+					</li>
+					<li class="active">Video_Gallery</li>
+				</ul><!-- .breadcrumb -->
+
+				<div class="nav-search" id="nav-search">
+					<form class="form-search">
+						<span class="input-icon">
+							<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+							<i class="icon-search nav-search-icon"></i>
+						</span>
+					</form>
+				</div><!-- #nav-search -->
+			</div>
+
+			<div class="page-content">
+				<div class="page-header">
+					<h1>
+						Video_Gallery
+						<small>
+							<i class="icon-double-angle-right"></i>
+							添加你的视频
+						</small>
+						<a class="btn btn-success btn-sm" href="{:u('Dashboard/Index/up_video')}">上传视频</a>
+					</h1>
+				</div><!-- /.page-header -->
+
+				<div class="row col-sm-12 col-md-12 col-lg-5">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
+							<div class="jp-type-playlist">
+								<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+								<div class="jp-gui">
+									<div class="jp-video-play">
+										<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+									</div>
+									<div class="jp-interface">
+										<div class="jp-progress">
+											<div class="jp-seek-bar">
+												<div class="jp-play-bar"></div>
+											</div>
+										</div>
+										<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+										<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+										<div class="jp-controls-holder">
+											<div class="jp-controls">
+												<button class="jp-previous" role="button" tabindex="0">previous</button>
+												<button class="jp-play" role="button" tabindex="0">play</button>
+												<button class="jp-next" role="button" tabindex="0">next</button>
+												<button class="jp-stop" role="button" tabindex="0">stop</button>
+											</div>
+											<div class="jp-volume-controls">
+												<button class="jp-mute" role="button" tabindex="0">mute</button>
+												<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+												<div class="jp-volume-bar">
+													<div class="jp-volume-bar-value"></div>
+												</div>
+											</div>
+											<div class="jp-toggles">
+												<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+												<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+												<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+											</div>
+										</div>
+										<div class="jp-details">
+											<div class="jp-title" aria-label="title">&nbsp;</div>
+										</div>
+									</div>
+								</div>
+								<div class="jp-playlist">
+									<ul>
+										<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+										<li>&nbsp;</li>
+									</ul>
+								</div>
+								<div class="jp-no-solution">
+									<span>Update Required</span>
+									To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.row -->
+				<div class="col-lg-3"></div>
+				<div class="row col-sm-12 col-md-12 col-lg-4">
+					<table class="table table-condensed table-hover">
+						<volist name="video" id="video_vo" empty="暂时没有数据">
+							<tr>
+								<td><a href="{:U('Home/Video/film')}"><i>&gt;&gt;</i>{$video_vo.v_title}</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-gid="{$video_vo.v_id}" data-gtitle="{$video_vo.v_title}" data-gsource="{$video_vo.v_source}">
+									<i class="icon-pencil"></i>编辑
+								</a></td>
+								<td><a href="{:U('Dashboard/Index/del_video')}?vid={$video_vo.v_id}">删除</a></td>
+							</tr>
+						</volist>
+					</table>
+				</div>
+			</div><!-- /.page-content -->
+		</div><!-- /.main-content -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="exampleModalLabel">Edit</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">Title:</label>
+							<input type="text" class="form-control" id="recipient-name">
+						</div>
+						<div class="form-group">
+							<label for="Source-name" class="control-label">Source:</label>
+							<input type="text" class="form-control" id="Source-name">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<a type="button" class="btn btn-primary" id="sendhref">Send message</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/assets/js/jPlayer_js/jquery.jplayer.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/assets/js/jPlayer_js/jplayer.playlist.min.js"></script>
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	var str1 = "";
+	$('#recipient-name').blur(function(){
+		var titlestr = $(this).val();
+		var Sourcestr = $('#Source-name').val();
+		$('#sendhref').attr('href',str1+"&v_title="+titlestr+"&v_source="+Sourcestr);
+	})
+	$('#Source-name').blur(function(){
+		var Sourcestr = $(this).val();
+		var titlestr = $('#recipient-name').val();
+		$('#sendhref').attr('href',str1+"&v_title="+titlestr+"&v_source="+Sourcestr);
+	})
+	$('#exampleModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget);
+		var gid = button.data('gid');
+		var gtitle = button.data('gtitle');
+		var gsource = button.data('gsource');
+		var modal = $(this);
+		modal.find('.modal-body #recipient-name').val(gtitle);
+		modal.find('.modal-body #Source-name').val(gsource);
+		
+		modal.find('.modal-footer a').attr('href',"{:U('Dashboard/Index/edt_video')}?v_id="+gid);
+		str1 = $('.modal-footer a').attr('href');
+	})
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+	<volist name="video" id="vo" empty="暂时没有数据">
+		{
+			title:"{$vo.v_title}",
+			artist:"{$vo.v_source}",
+			free:true,
+			m4v: "__PUBLIC__/assets/{$vo.v_url}",
+			poster:"__PUBLIC__/assets/image/Big_Buck_Bunny_Trailer_480x270.png"
+		},
+	</volist>
+	], {
+		swfPath: "jplayer",
+		supplied: "webmv, ogv, m4v",
+		size: {
+			width: "640px",
+			height: "360px",
+			cssClass: "jp-video-360p"
+		},
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+//]]>
+</script>

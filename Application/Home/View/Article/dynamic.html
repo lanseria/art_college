@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style_news.css">
+<div class="nav2" style="right: 130px;">
+  <div class="zyc_tit"> <span><a href="{:U('Home/Index/index')}">首页</a>&nbsp;&gt;&nbsp;<a href="{:U('Home/Index/campus')}">动态列表</a> &gt; <a href="#">全部动态</a></span>
+  </div>
+</div>
+</div>
+<div class="zy_cen">
+  <div class="newx_tit"><strong class="text-center">{$new.a_title}<br>
+  </strong><em>时间：{$new.a_ctime}</em></div>
+  <div class="content_c">{$new.a_content|htmlspecialchars_decode}
+  </div>
+</div>
+<script type="text/javascript">
+	jQuery(function($){
+		$('div.content_c img').css({'width':'764px','height':'auto'});
+	})
+</script>

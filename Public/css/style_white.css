@@ -1,0 +1,278 @@
+.index_content{
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+div.img_header{
+	position: relative;
+}
+.img_header .baner1{
+	width: 100%;
+	height: 15px;
+	background-color: #363d42;
+}
+.div_nav{
+	height: 44px;
+	position: absolute;
+	top: 20px;
+	left: 92px;
+}
+ul.ul1{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 45px;
+}
+ul.ul1>li{
+	float: left;
+	height: 35px;
+	margin-left: 31px;
+	margin-top: 9px;
+}
+ul.ul1>li:first-child{
+	margin-left: 0;
+}
+ul.ul1>li>div>a{
+	padding: 9px 17px 9px 17px;
+	color: #fff;
+}
+ul.ul1>li>div>a span{
+	padding: 0 0 0 15px;
+	font-size: 12px;
+	cursor: pointer;
+}
+ul.ul1>li.active{
+	border-bottom: 5px solid rgba(255, 255, 255, 0.61);
+}
+img.img_baner{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -10;
+}
+div.img_mask{
+	width: inherit;
+	height: 390px;
+	background-color: rgba(0, 0, 0, 0.61);
+}
+img.img_baner1{
+	position: absolute;
+	left: 130px;
+	top: 90px;
+	z-index: 1;
+}
+img.img_baner2{
+	position: absolute;
+	width: 153px;
+	height: auto;
+	top: 78px;
+	left: 194px;
+	z-index: 2;
+}
+img.img_baner3{
+	position: absolute;
+	top: 74px;
+	right: 152px;
+	z-index: 2;
+}
+img.img_baner4{
+	position: absolute;
+	top: 90px;
+	right: 80px;
+	z-index: 2;
+}
+div.nav2{
+	position: absolute;
+	bottom: 18px;
+	left: 77px;
+	height: 51px;
+}
+ul.ul2{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	border-bottom: 1px solid #fff;
+}
+ul.ul2 li{
+	padding: 0 12px 0 12px;
+	float: left;
+	height: 50px;
+	position: relative;
+	margin-left: 5px;
+	
+}
+ul.ul2 li:first-child{
+	margin-left: 0;
+}
+ul.ul2 li.active{
+	border-bottom: 5px solid #fff;
+}
+ul.ul2 li a{
+	line-height: 50px;
+	color: #fff;
+	font-size: 12px;
+}
+div.img_footer{
+	margin-left: 0;
+	margin-top: 47px;
+	width: 450px;
+}
+ul.ul_img{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+}
+ul.ul_img li{
+	float: left;
+	height: 143px;
+	margin-left: 8px;
+}
+ul.ul_img li:first-child{
+	margin-left: 0;
+}
+ul.ul_img li img{
+	margin-bottom: 10px;
+}
+ul.ul_img li span{
+	font-size: 12px;
+}
+div.img_4{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+div.sub2{
+	position: absolute;
+	background-color: rgba(63,30,22,0.5);
+	width: 155px;
+	height: 155px;
+	bottom: 0;
+	right: 0;
+}
+div.sub1 p{
+	color: #fff;
+}
+div.sub2 p{
+	color: #fff;
+}
+p.p_text1{
+	margin-top: 50px;
+}
+p.p_text2{
+	margin-top: 37px;
+}
+div.main_content{
+	background-image: url(../images/small_img/1_0003_content_1.png);
+	background-repeat: no-repeat;
+	height: 436px;
+	background-color: #fff;
+	position: relative;
+}
+div.div_125_217{
+	height: 217px;
+	width: 127px;
+	background-color: #362e2b;
+	position: absolute;
+	top: 24px;
+	left: 194px;
+}
+div.div_person{
+	position: absolute;
+	top: 40px;
+	left: 210px;
+}
+div.div_01{
+	letter-spacing: 2px;
+	position: absolute;
+	top: 40px;
+	left: 307px;
+	font-size: 20px;
+	color: #362e2b;
+}
+div.div_02{
+	position: absolute;
+	top: 78px;
+	left: 285px;
+	font-size: 12px;
+	color: #362e2b;
+}
+div.div_03{
+	position: absolute;
+	top: 139px;
+	left: 323px;
+	font-size: 12px;
+	width: 474px;
+}
+div.tab-pane p{
+	margin-left: 40px;
+	margin-top: 45px;
+}
+.nav-tabs>li>a{
+	color: #362e2b;
+}
+div.div_02 span{
+	color: #fff;
+}
+div.div_01 span{
+	color: #fff;
+}
+ul.ul_title{
+	width: 354px;
+	padding-top: 45px;
+}
+div.divtext{
+	display: inline-block;
+	padding: 5px 8px;
+	color: #fff;
+	background-color: #6b767e;
+	margin-left: 40px;
+}
+p.ptext{
+	font-size: 12px;
+	width: 441px;
+	padding-left: 40px;
+}
+div.index_footer{
+	position: relative;
+	background-color: #c0c8cd;
+	height: 77px;
+}
+div.nav_footer{
+	margin-top: -50px;
+	margin-left: 196px;
+	background-color: #eff0f1;
+	width: 632px;
+	height: 82px;
+	display: inline-block;
+}
+div.nav_footer div{
+	margin-top: 20px;
+	margin-left: 114px;
+}
+div.nav_footer div p{
+	font-size: 12px;
+}
+ul.ul3{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 50px;
+}
+ul.ul3 li{
+	float: left;
+	height: 50px;
+	width: 97px;
+	margin-left: 35px;
+	margin-top: 24px;
+}
+ul.ul3 li a{
+}
+ul.ul3 li span{
+	color:#000;
+	margin-left: 10px;
+}

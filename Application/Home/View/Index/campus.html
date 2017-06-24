@@ -1,0 +1,32 @@
+<link href="__PUBLIC__/css/style_newlist.css" rel="stylesheet"/>
+
+<div class="nav2" style="right: 130px;">
+  <div class="zyc_tit"> <span><a href="{:U('Home/Index/index')}">首页</a>&nbsp;&gt;&nbsp;<a href="{:U('Home/Index/campus')}">党团工学</a> &gt; <a href="#">{$c_title}</a></span>
+  </div>
+</div>
+</div>
+<div class="zy_cen">
+  <ul class="new_ul fl">
+    <volist name="article" id="article_vo" empty="暂时没有数据">
+      <li><em>[{$article_vo.a_ctime}]</em><a href="{:U('Home/Article/news')}?aid={$article_vo.a_id}"><i>&gt;&gt;</i>{$article_vo.a_title}</a></li>
+    </volist>
+  </ul>
+  <nav>
+    <ul class="pagination">
+      {$pages}
+    </ul>
+  </nav>
+</div>
+<div class="list-group">
+  <volist name="gallery" id="gallery_vo" empty="暂时没有数据">
+    <div class="thumbnail list-group-item">
+    <a href="{:U('Home/Gallery/photo')}">
+      <img src="__PUBLIC__/assets/images/gallery/{$gallery_vo.g_thumb_url}" alt="{$gallery_vo.g_title}">
+      </a>
+      <div class="caption">
+        <h3>{$gallery_vo.g_title}</h3>
+        <p>{$gallery_vo.g_title}</p>
+      </div>
+    </div>
+  </volist>
+</div>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<title>Dashboard-艺术设计学院</title>
+	<meta name="keywords" content="艺术设计学院" />
+	<meta name="description" content="艺术设计学院" />
+	
+	<link href="__PUBLIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/colorbox.css" />
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/dropzone.css" />
+
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/ace.min.css" />
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/ace-skins.min.css" />
+
+
+	<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+	<script src="__PUBLIC__/assets/js/jquery.min.js"></script>
+	<link href="__PUBLIC__/favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+	<div class="navbar navbar-default" id="navbar">
+		<script type="text/javascript">
+			try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+		</script>
+
+		<div class="navbar-container" id="navbar-container">
+			<div class="navbar-header pull-left">
+				<a href="#" class="navbar-brand">
+					<small>
+						<i class="icon-leaf"></i>
+						ACE后台管理系统
+					</small>
+				</a><!-- /.brand -->
+			</div><!-- /.navbar-header -->
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+					<li class="light-blue">
+						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+							<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
+							<span class="user-info">
+								<small>Welcome,</small>
+								{$Think.session.logineduser}
+							</span>
+
+							<i class="icon-caret-down"></i>
+						</a>
+
+						<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							<li>
+								<a href="{:U('Home/Index/index')}">
+									<i class="icon-cog"></i>
+									前台
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<i class="icon-user"></i>
+									个人资料
+								</a>
+							</li>
+
+							<li class="divider"></li>
+
+							<li>
+								<a href="{:U('Dashboard/User/logout')}">
+									<i class="icon-off"></i>
+									退出
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.ace-nav -->
+			</div><!-- /.navbar-header -->
+		</div><!-- /.container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+		</script>
+
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="#">
+				<span class="menu-text"></span>
+			</a>
+
+			<div class="sidebar" id="sidebar">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="icon-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="icon-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="icon-group"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="icon-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- #sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="{$d1}">
+						<a href="{:u('Dashboard/Index/index')}">
+							<i class="icon-dashboard"></i>
+							<span class="menu-text"> 控制台 </span>
+						</a>
+					</li>
+
+					<li class="{$d2}">
+						<a href="{:u('Dashboard/Index/news')}" class="dropdown-toggle" id="news">
+							<i class="icon-edit"></i>
+							<span class="menu-text"> 新闻列表 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=党总支新闻">
+									<i class="icon-double-angle-right"></i>
+									党总支新闻
+								</a>
+							</li>
+
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=共青团新闻">
+									<i class="icon-double-angle-right"></i>
+									共青团新闻
+								</a>
+							</li>
+
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=分工会新闻">
+									<i class="icon-double-angle-right"></i>
+									分工会新闻
+								</a>
+							</li>
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=学生会新闻">
+									<i class="icon-double-angle-right"></i>
+									学生会新闻
+								</a>
+							</li>
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=政策法规">
+									<i class="icon-double-angle-right"></i>
+									政策法规
+								</a>
+							</li>
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=特色工作">
+									<i class="icon-double-angle-right"></i>
+									特色工作
+								</a>
+							</li>
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=美丽瞬间">
+									<i class="icon-double-angle-right"></i>
+									美丽瞬间
+								</a>
+							</li>
+							<li>
+								<a href="{:u('Dashboard/Index/news')}?sub=就业新闻">
+									<i class="icon-double-angle-right"></i>
+									就业新闻
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="{$d3}">
+						<a href="{:u('Dashboard/Index/notice')}" class="dropdown-toggle" id="notice">
+							<i class="icon-bullhorn"></i>
+							<span class="menu-text"> 公告列表 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{:u('Dashboard/Index/notice')}?sub=就业公告">
+									<i class="icon-double-angle-right"></i>
+									就业公告
+								</a>
+							</li>
+
+							<li>
+								<a href="{:u('Dashboard/Index/notice')}?sub=教师公告">
+									<i class="icon-double-angle-right"></i>
+									教师公告
+								</a>
+							</li>
+
+							<li>
+								<a href="{:u('Dashboard/Index/notice')}?sub=学生公告">
+									<i class="icon-double-angle-right"></i>
+									学生公告
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="{$d4}">
+						<a href="{:u('Dashboard/Index/dynamic')}" class="dropdown-toggle" id="dynamic">
+							<i class="icon-star-half-full"></i>
+							<span class="menu-text"> 动态列表 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="{:u('Dashboard/Index/dynamic')}?sub=教学动态">
+									<i class="icon-double-angle-right"></i>
+									教学动态
+								</a>
+							</li>
+
+							<li>
+								<a href="{:u('Dashboard/Index/dynamic')}?sub=就业动态">
+									<i class="icon-double-angle-right"></i>
+									就业动态
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="{$d5}">
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-eye-open"></i>
+							<span class="menu-text"> 图片展示 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{:u('Dashboard/Index/photo')}?sub=校园风光">
+									<i class="icon-double-angle-right"></i>
+									校园风光
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="dropdown-toggle">
+									<i class="icon-double-angle-right"></i>
+
+									作品展示
+									<b class="arrow icon-angle-down"></b>
+								</a>
+
+								<ul class="submenu">
+									<li>
+										<a href="{:u('Dashboard/Index/photo')}?sub=最新作品">
+											<i class="icon-leaf"></i>
+											最新作品
+										</a>
+									</li>
+									<li>
+										<a href="{:u('Dashboard/Index/photo')}?sub=最佳作品">
+											<i class="icon-leaf"></i>
+											最佳作品
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="{$d6}">
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-film"></i>
+							<span class="menu-text"> 上传视频 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{:u('Dashboard/Index/video')}?sub=精彩视频">
+									<i class="icon-double-angle-right"></i>
+									精彩视频
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="{$d7}">
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-globe"></i>
+							<span class="menu-text"> 网站布局 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="{:U('Dashboard/EdtMsg/index')}">
+									<i class="icon-double-angle-right"></i>
+									首页
+								</a>
+							</li>
+							<li class="{$d71}">
+								<a href="#" class="dropdown-toggle">
+									<i class="icon-double-angle-right"></i>
+									学院概况
+									<b class="arrow icon-angle-down"></b>
+								</a>
+
+								<ul class="submenu">
+									<li>
+										<a href="{:U('Dashboard/EdtMsg/survey')}">
+											学校简介..5个栏目填写
+										</a>
+									</li>
+									<li>
+										<a href="{:U('Dashboard/EdtMsg/survey_photo')}">
+											底层图片
+										</a>
+									</li>
+									<li>
+										<a href="{:U('Dashboard/EdtMsg/survey_campus')}">
+											系部中心
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="dropdown-toggle">
+									<i class="icon-double-angle-right"></i>
+									师资队伍
+									<b class="arrow icon-angle-down"></b>
+								</a>
+
+								<ul class="submenu">
+									<li>
+										<a href="#">
+											<i class="icon-leaf"></i>
+											老师介绍
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-leaf"></i>
+											老师荣誉
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="dropdown-toggle">
+									<i class="icon-double-angle-right"></i>
+									人才培养
+									<b class="arrow icon-angle-down"></b>
+								</a>
+
+								<ul class="submenu">
+									<li>
+										<a href="#" class="dropdown-toggle">
+											<i class="icon-pencil"></i>
+											本科生
+											<b class="arrow icon-angle-down"></b>
+										</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+													<i class="icon-plus"></i>
+													培养方案
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													<i class="icon-eye-open"></i>
+													课程设置
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="dropdown-toggle">
+											<i class="icon-pencil"></i>
+											研究生
+											<b class="arrow icon-angle-down"></b>
+										</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+													<i class="icon-plus"></i>
+													培养方案
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													<i class="icon-eye-open"></i>
+													课程设置
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-eye-open"></i>
+													成果展示
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="dropdown-toggle">
+											<i class="icon-pencil"></i>
+											教学评估
+											<b class="arrow icon-angle-down"></b>
+										</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+													<i class="icon-plus"></i>
+													实验室教学中心
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													<i class="icon-eye-open"></i>
+													开放实验室
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="dropdown-toggle">
+											<i class="icon-double-angle-right"></i>
+											研究成果
+											<b class="arrow icon-angle-down"></b>
+										</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													研究方向
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													研究成果
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													创作方向
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="dropdown-toggle">
+											<i class="icon-double-angle-right"></i>
+											底部链接
+											<b class="arrow icon-angle-down"></b>
+										</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													官方微信
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													学科竞赛
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													在线展厅
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													就业信息
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													友情链接
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="icon-leaf"></i>
+													艺术收藏
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+				</div>
+
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			{__CONTENT__}
+
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+					<i class="icon-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box" id="ace-settings-box">
+					<div>
+						<div class="pull-left">
+							<select id="skin-colorpicker" class="hide">
+								<option data-skin="default" value="#438EB9">#438EB9</option>
+								<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+								<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+								<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+							</select>
+						</div>
+						<span>&nbsp; 选择皮肤</span>
+					</div>
+
+					<div>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+						<label class="lbl" for="ace-settings-navbar"> 固定导航条</label>
+					</div>
+
+					<div>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+						<label class="lbl" for="ace-settings-sidebar"> 固定滑动条</label>
+					</div>
+
+					<div>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+						<label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
+					</div>
+
+					<div>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+						<label class="lbl" for="ace-settings-rtl">切换到左边</label>
+					</div>
+
+					<div>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+						<label class="lbl" for="ace-settings-add-container">
+							切换窄屏
+							<b></b>
+						</label>
+					</div>
+				</div>
+			</div><!-- /#ace-settings-container -->
+		</div><!-- /.main-container-inner -->
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+	</div><!-- /.main-container -->
+
+
+	<script type="text/javascript">
+		window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+	</script>
+
+
+	<script type="text/javascript">
+		if("ontouchend" in document) document.write("<script src='__PUBLIC__/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+	</script>
+	<script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>
+
+	<script src="__PUBLIC__/assets/js/ace-elements.min.js"></script>
+	<script src="__PUBLIC__/assets/js/ace.min.js"></script>
+
+	<!--nav-->
+	<script type="text/javascript">
+		jQuery(function($){
+			// $('li ul li a').click(function(){
+			// 	$("ul.nav-list").each(function(){
+			// 		$(this).find("li").each(function(){
+			// 			$(this).attr('class','');
+			// 		});
+			// 	});
+			// 	$("ul.nav-list li.active ul").each(function(){
+			// 		$(this).find("li").each(function(){
+			// 			$(this).attr('class','');
+			// 		});
+			// 	});
+			// 	$('.page-header h1').html($(this).parent().parent().parent().children().html()+$(this).html());
+				
+			// 	$(this).parent().parent().parent().attr('class','active');
+			// 	$(this).parent().attr('class','active');
+			// });
+
+			// $("a#news").click(function(){
+			// 	location.href = "{:u('Dashboard/Index/news')}";
+			// });
+			// $("a#notice").click(function(){
+			// 	location.href = "{:u('Dashboard/Index/notice')}";
+			// });
+			// $("a#dynamic").click(function(){
+			// 	location.href = "{:u('Dashboard/Index/dynamic')}";
+			// });
+			// $("li.active ul").each(function(){
+			// 	$(this).find("li").each(function(i){
+			// 		$(this).append('<input type="hidden" value="'+i+'"/>');
+			// 	});
+			// })
+		});
+	</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+ul.ul2>li{
+	float: left;
+	height: 50px;
+	width: 143px;
+	background-color: #6b767e;
+	margin-left: 19px;
+	position: relative;
+}
+ul.ul2 li:first-child{
+	margin-left: 0;
+}
+ul.ul2 li.active{
+	background-image: url(../images/small_img/2_0029_foot-1.png);
+	background-color: rgba(255, 255, 255, 0);
+}
+ul.ul2>li a{
+	line-height: 50px;
+}
+ul.ul2>li>div>ul>li>a{
+	line-height: 2.4285;
+	font-size: 12px;
+}
+ul.ul2 li span{
+	color: #fff;
+	cursor: pointer;
+}
+img.img_foot{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+div.main_content{
+	padding-left: 130px;
+	padding-top: 46px;
+	padding-bottom: 42px;
+	background-color: #eff0f1;
+}
+p.p_main{
+	width: 354px;
+	display: inline-block;
+}
+p.p_last{
+	margin-left: 82px;
+}
+div.img_footer{
+	margin-left: 130px;
+	margin-top: 47px;
+	height: 192px;
+}
+ul.ul_img{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 0 0 0; 
+	margin: 0;
+	height: 50px;
+}
+ul.ul_img li{
+	float: left;
+	height: 50px;
+	width: 153px;
+	margin-left: 60px;
+}
+ul.ul_img li:first-child{
+	margin-left: 0;
+}
+ul.ul_img li img{
+	margin-bottom: 10px;
+}
+ul.ul_img li span{
+	font-size: 12px;
+}

@@ -1,0 +1,141 @@
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+
+		<ul class="breadcrumb">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a href="#">首页</a>
+			</li>
+			<li class="active">Gallery</li>
+		</ul><!-- .breadcrumb -->
+
+		<div class="nav-search" id="nav-search">
+			<form class="form-search">
+				<span class="input-icon">
+					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+					<i class="icon-search nav-search-icon"></i>
+				</span>
+			</form>
+		</div><!-- #nav-search -->
+	</div>
+
+	<div class="page-content">
+		<div class="page-header">
+			<h1>
+				{$parentsname}
+				<small>
+					<i class="icon-double-angle-right"></i>
+					{$subname}
+				</small>
+				<a class="btn btn-success btn-sm" href="{:u('Dashboard/Index/up_photo')}">上传图片</a>
+			</h1>
+		</div><!-- /.page-header -->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+
+				<div class="row-fluid">
+					<ul class="ace-thumbnails">
+						<volist name="gallery" id="vo" empty="暂时没有数据">
+							<li>
+								<a href="__PUBLIC__/assets/images/gallery/{$vo.g_url}" title="{$vo.g_title}" data-rel="colorbox">
+									<img alt="150x150" src="__PUBLIC__/assets/images/gallery/{$vo.g_thumb_url}" />
+									<div class="text">
+										<div class="inner">Sample Caption on Hover</div>
+									</div>
+								</a>
+
+								<div class="tools tools-bottom">
+									<a href="__PUBLIC__/assets/images/gallery/{$vo.g_url}">
+										<i class="icon-link"></i>
+									</a>
+									<a href="#" data-toggle="modal" data-target="#exampleModal" data-gid="{$vo.g_id}" data-gtitle="{$vo.g_title}">
+										<i class="icon-pencil"></i>
+									</a>
+									<a href="{:U('Dashboard/Index/del_photo')}?g_id={$vo.g_id}">
+										<i class="icon-remove red"></i>
+									</a>
+								</div>
+							</li>
+						</volist>
+					</ul>
+				</div><!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+<!-- inline scripts related to this page -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">Edit</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="recipient-name" class="control-label">Title:</label>
+					<input type="text" class="form-control" id="recipient-name">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<a type="button" class="btn btn-primary" id="sendhref">Send message</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="__PUBLIC__/assets/js/jquery.colorbox-min.js"></script>
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+	var str1 = "";
+	$('#recipient-name').blur(function(){
+		var str = $(this).val();
+		$('#sendhref').attr('href',str1+"&g_title="+str);
+	})
+	$('#exampleModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget);
+		var gid = button.data('gid');
+		var gtitle = button.data('gtitle');
+		var modal = $(this);
+		modal.find('.modal-body input').val(gtitle);
+		modal.find('.modal-footer a').attr('href',"{:U('Dashboard/Index/edt_photo')}?g_id="+gid);
+		str1 = $('.modal-footer a').attr('href');
+	})
+	jQuery(function($) {
+		var colorbox_params = {
+			reposition:true,
+			scalePhotos:true,
+			scrolling:false,
+			previous:'<i class="icon-arrow-left"></i>',
+			next:'<i class="icon-arrow-right"></i>',
+			close:'&times;',
+			current:'{current} of {total}',
+			maxWidth:'100%',
+			maxHeight:'100%',
+			onOpen:function(){
+				document.body.style.overflow = 'hidden';
+			},
+			onClosed:function(){
+				document.body.style.overflow = 'auto';
+			},
+			onComplete:function(){
+				$.colorbox.resize();
+			}
+		};
+
+		$('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+	$("#cboxLoadingGraphic").append("<i class='icon-spinner orange'></i>");//let's add a custom loading icon
+
+	/**$(window).on('resize.colorbox', function() {
+		try {
+			//this function has been changed in recent versions of colorbox, so it won't work
+			$.fn.colorbox.load();//to redraw the current frame
+		} catch(e){}
+	});*/
+})
+</script>

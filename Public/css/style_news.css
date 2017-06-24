@@ -1,0 +1,76 @@
+.zy_cen {
+	width: 764px;
+	margin-left: 130px;
+	line-height: 26px;
+	margin-top: 52px;
+	color: #444;
+	min-height: 525px;
+	padding-bottom: 50px;
+	display: inline-block;
+}
+.zyc_tit {
+	line-height: 28px;
+	border-bottom: 1px solid #dfdfdf;
+	margin: 18px 0px 30px;
+}
+.zyc_tit span {
+	float: right;
+	padding-left: 17px;
+	color: #fff;
+}
+.zyc_tit strong {
+	padding-left: 20px;
+}
+.zyc_tit span a {
+	color: #fff;
+}
+.newx_tit em {
+	display: block;
+	text-align: right;
+	color: #cacaca;
+	margin-top: 8px;
+}
+.newx_tit>strong{
+	font-weight: 700;
+	font-size: 24px;
+}
+.content_c img{
+	width: 764px;
+}
+.toobler2014_link {
+    width: 80px;
+    height: 69px;
+    position: fixed;
+    right: 0px;
+    top: 60%;
+    margin-top: -45px;
+    outline: none;
+    z-index: 1000;
+}
+.toobler2014_link {
+    display: block;
+}
+.toobler2014_link img {
+    border: none;
+    width: 80px;
+    height: 69px;
+}
+
+
+
+/**************************************************************/
+/**************************************************************/
+    
+/* Header fixed height (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+    .toobler2014_link {
+        width: 135px;
+        height: 117px;
+        margin-top: -59px;
+    }
+    .toobler2014_link img {
+        width: 135px;
+        height: 117px;
+    }
+}

@@ -1,0 +1,90 @@
+.zy_cen {
+	width: 546px;
+	margin-left: 130px;
+	line-height: 26px;
+	margin-top: 52px;
+	color: #444;
+	min-height: 525px;
+	padding-bottom: 50px;
+	display: inline-block;
+}
+div.caption h3{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+div.row-fluid{
+	display: flex;
+	width: 790px;
+	margin: 0 auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+div.w990{
+	width: 990px;
+	margin-top: 90px;
+}
+ul.new_ul li a{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+	width: 360px;
+}
+.zyc_tit {
+	line-height: 28px;
+	border-bottom: 1px solid #dfdfdf;
+	margin: 18px 0px 30px;
+}
+.zyc_tit span {
+	float: right;
+	padding-left: 17px;
+	color: #fff;
+}
+.zyc_tit strong {
+	padding-left: 20px;
+}
+.zyc_tit span a {
+	color: #fff;
+}
+.newx_tit em {
+	display: block;
+	text-align: right;
+	color: #cacaca;
+	margin-top: 8px;
+}
+.newx_tit>strong{
+	font-weight: 700;
+	font-size: 24px;
+}
+.new_ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+.new_ul li {
+	width: 520px;
+	line-height: 31px;
+}
+.new_ul li em {
+	float: right;
+	color: #878585;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.new_ul li a {
+	color: #626262;
+}
+.new_ul li i {
+	font-style: normal;
+	color: #A0A0A0;
+	margin-right: 6px;
+}
+li, ol {
+	list-style: none;
+}
+.list-group{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 0;
+	width: 214px;
+	margin-top: 52px;
+}

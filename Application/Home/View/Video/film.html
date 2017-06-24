@@ -1,0 +1,104 @@
+		<link href="__PUBLIC__/assets/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+		<link href="__PUBLIC__/css/style_newlist.css" rel="stylesheet"/>
+
+		<div class="nav2" style="    right: 130px;">
+			<div class="zyc_tit"> <span><a href="{:U('Home/Index/index')}">首页</a>&nbsp;&gt;&nbsp;<a href="{:U('Home/Video/film')}">精彩视频</a>
+			</div>
+		</div>
+	</div>
+	<div class="page-content" style="margin: 0 auto;width: 700px;">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
+					<div class="jp-type-playlist">
+						<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+						<div class="jp-gui">
+							<div class="jp-video-play">
+								<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+							</div>
+							<div class="jp-interface">
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+								<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+								<div class="jp-controls-holder">
+									<div class="jp-controls">
+										<button class="jp-previous" role="button" tabindex="0">previous</button>
+										<button class="jp-play" role="button" tabindex="0">play</button>
+										<button class="jp-next" role="button" tabindex="0">next</button>
+										<button class="jp-stop" role="button" tabindex="0">stop</button>
+									</div>
+									<div class="jp-volume-controls">
+										<button class="jp-mute" role="button" tabindex="0">mute</button>
+										<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+										<div class="jp-volume-bar">
+											<div class="jp-volume-bar-value"></div>
+										</div>
+									</div>
+									<div class="jp-toggles">
+										<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+										<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+										<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+									</div>
+								</div>
+								<div class="jp-details">
+									<div class="jp-title" aria-label="title">&nbsp;</div>
+								</div>
+							</div>
+						</div>
+						<div class="jp-playlist">
+							<ul>
+								<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+								<li>&nbsp;</li>
+							</ul>
+						</div>
+						<div class="jp-no-solution">
+							<span>Update Required</span>
+							To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+						</div>
+					</div>
+				</div>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.page-content -->
+
+	<script type="text/javascript" src="__PUBLIC__/assets/js/jPlayer_js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/assets/js/jPlayer_js/jplayer.playlist.min.js"></script>
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+	<volist name="video" id="vo" empty="暂时没有数据">
+		{
+			title:"{$vo.v_title}",
+			artist:"{$vo.v_source}",
+			free:true,
+			m4v: "__PUBLIC__/assets/{$vo.v_url}",
+			poster:"__PUBLIC__/assets/image/Big_Buck_Bunny_Trailer_480x270.png"
+		},
+	</volist>
+	], {
+		swfPath: "jplayer",
+		supplied: "webmv, ogv, m4v",
+		size: {
+			width: "640px",
+			height: "360px",
+			cssClass: "jp-video-360p"
+		},
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+//]]>
+</script>

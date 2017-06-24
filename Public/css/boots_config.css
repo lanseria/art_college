@@ -1,0 +1,13 @@
+.ul1 .dropdown-menu{
+	border-radius: 0;
+	min-width: auto; 
+	top: 28px;
+}
+.ul2 .dropdown-menu{
+	left: -15px;
+}
+body{
+	font-family: 'Microsoft YaHei';
+	background-color: #fff;
+	//background: linear-gradient(to bottom, white , rgb(222, 222, 222));
+}
